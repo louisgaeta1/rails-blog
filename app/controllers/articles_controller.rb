@@ -19,7 +19,6 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-
     if @article.save
       redirect_to @article
     else
@@ -37,12 +36,10 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-
     redirect_to articles_path
   end
 
   private
-
     def set_article
       @article = Article.find(params[:id])
     end
